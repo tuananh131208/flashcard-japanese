@@ -1,6 +1,6 @@
 import streamlit as st
 
-# Tạo danh sách từ vựng
+# Vocabulary list
 vocab_list = [
     ("音読", "おんどく"), ("放送", "ほうそう"), ("詩人", "しじん"), ("左右", "さゆう"),
     ("遠方", "えんぽう"), ("消息", "しょうそく"), ("解決", "かいけつ"), ("破竹", "はちく"),
@@ -15,13 +15,13 @@ vocab_list = [
 
 st.title("📚 Japanese Flashcards")
 
-# Tùy chọn ẩn/hiện Kanji hoặc Hiragana
-show_kanji = st.checkbox("Hiện Kanji", value=True)
-show_hiragana = st.checkbox("Hiện Hiragana", value=False)
+# Toggle Kanji and Hiragana visibility
+show_kanji = st.checkbox("Show Kanji", value=True)
+show_hiragana = st.checkbox("Show Hiragana", value=False)
 
-# Flashcard từng dòng
+# Flashcards
 for i, (kanji, hiragana) in enumerate(vocab_list):
-    with st.expander(f"Từ {i + 1}"):
+    with st.expander(f"Word {i + 1}"):
         if show_kanji:
             st.markdown(f"**Kanji**: {kanji}")
         if show_hiragana:
